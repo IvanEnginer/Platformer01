@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
 public class CheingDirection : MonoBehaviour
 {
     private Animator _animator;
@@ -13,9 +15,13 @@ public class CheingDirection : MonoBehaviour
 
     private int _runToRightAnimatorHash = Animator.StringToHash("IsRunToRighRobot");
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
         _startPoint = transform.position;
 
         _lastPoint = _startPoint;

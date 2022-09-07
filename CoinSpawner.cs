@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _template;
+    [SerializeField] private Coin _template;
     [SerializeField] private Transform _spawnPoints;
 
     private WaitForSeconds _waitForSeconds = new WaitForSeconds(1.0f);
@@ -37,7 +37,7 @@ public class CoinSpawner : MonoBehaviour
 
             Transform target = _points[i];
 
-            GameObject gameObject = Instantiate(_template, target.position, Quaternion.identity);
+            var creatCoin = Instantiate(_template, target.position, Quaternion.identity);
         }
     }
 }

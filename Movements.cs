@@ -15,9 +15,13 @@ public class Movements : MonoBehaviour
     private int _runToRightAnimatorHash = Animator.StringToHash("IsRunToRight");
     private int _runToLeftAnimatorHash = Animator.StringToHash("IsRunToLeft");
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
         _startVector3.x = transform.position.x;
     }
 
